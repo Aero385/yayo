@@ -7,7 +7,7 @@ export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="w-full shadow top-0 flex justify-center z-[10] md:px-40 px-4 py-4">
+    <div className="w-full shadow top-0 flex justify-center z-[10] md:px-40 px-6 py-4">
       <div className="md:w-[1440px] w-full flex justify-between items-center ">
         <Logo />
         <button

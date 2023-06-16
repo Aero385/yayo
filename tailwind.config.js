@@ -20,6 +20,7 @@ module.exports = {
         custYel: '#FDE24F',
         custPurp: 'rgba(153, 79, 243, 0.46)',
         custGrey: '#E9E4ED',
+        custOrang: '#FF5470',
       },
     
     },

@@ -1,4 +1,5 @@
-import Image from "next/image";
+import { motion } from "framer-motion";
+
 
 export default function Cards() {
   const className = "";
@@ -37,26 +38,51 @@ export default function Cards() {
   ];
 
   return (
-    <div className="w-full flex flex-col md:flex-row gap-10 justify-center items-center px-5 py-4 text-center">
-      {cards.map((card, index) => (
-        <div
-          key={index}
-          className={`${card.color} border rounded-xl flex flex-col pt-7 px-4 gap-7 items-center ${className}`}
-          style={{ width: "200px", height: "300px" }}
-        >
-          <div className="flex justify-center">
-            <Image
-              src={card.imageSrc}
-              width={80}
-              height={80}
-              alt="img"
-              className="md:w-20 md:h-20"
-            />
-          </div>
-          <h1 className="text-lg md:text-xl font-semibold">{card.title}</h1>
-          <p className="text-sm md:text-base">{card.description}</p>
+    <div className="w-full flex flex-col md:flex-row gap-10 justify-center items-center px-5 pt-7 text-center">
+    {cards.map((card, index) => (
+        <motion.div
+        key={index}
+        initial={{ opacity: 0, y: 300 }}
+        animate={{ opacity: 1, y: 0 }}
+        whileHover={{
+          scale: 1.1,
+          transition: { duration: 0.3 },
+          boxShadow: `0px 0px 10px `,
+        }}
+        transition={{ duration: 1, delay: index * 0.2 }}
+        className={`${card.color} border rounded-xl flex flex-col px-4 gap-4 ${className}`}
+        style={{ width: "245px", height: "350px" }}
+      >
+        <div className="flex mt-auto justify-center">
+          <motion.img
+            src={card.imageSrc}
+            width={80}
+            height={80}
+            alt="img"
+            className="md:w-30 md:h-30 w-30 h-30"
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+          />
         </div>
-      ))}
-    </div>
-  );
+        <motion.h1
+          className="text-3xl font-semibold"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          {card.title}
+        </motion.h1>
+        <motion.p
+          className="text-xl mb-auto"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+        >
+          {card.description}
+        </motion.p>
+      </motion.div>
+    ))}
+  </div>
+);
 }

@@ -8,12 +8,15 @@ import Prices from "@/container/Prices";
 export default function Home() {
   return (
     <>
-      <Header/>
-      <About/>
-      <Prices/>
-      <Example/>
-      <Advantages/>
-      <Footer/>
+    <Header />
+    <div className="max-w-[1440] mx-auto flex justify-center flex-col items-center md:px-4 px-8">
+      <About />
+      <Prices />
+      <Example />
+      <Advantages />
+      <Footer />
+    </div>
     </>
-  )
+  );
 }
+

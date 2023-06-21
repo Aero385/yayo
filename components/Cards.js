@@ -38,7 +38,7 @@ export default function Cards() {
   ];
 
   return (
-    <div className="w-full flex flex-col md:flex-row gap-10 justify-center items-center px-5 pt-7 text-center">
+    <div className="w-full flex flex-wrap md:flex-row gap-8 justify-center items-center px-5 pt-7 text-center">
     {cards.map((card, index) => (
         <motion.div
         key={index}

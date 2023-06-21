@@ -4,6 +4,8 @@ import Example from "@/container/Example";
 import Footer from "@/container/Footer";
 import Header from "@/container/Header";
 import Prices from "@/container/Prices";
+import Form from "@/components/Form";
+
 
 export default function Home() {
   return (
@@ -14,6 +16,7 @@ export default function Home() {
       <Prices />
       <Example />
       <Advantages />
+      <Form />
       <Footer />
     </div>
     </>

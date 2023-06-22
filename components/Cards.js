@@ -40,7 +40,7 @@ export default function Cards() {
   return (
     <div className="w-full flex flex-col md:flex-row gap-10 justify-center items-center px-5 pt-7 text-center">
     {cards.map((card, index) => (
-        <motion.div
+      <motion.div
         key={index}
         initial={{ opacity: 0, y: 300 }}
         animate={{ opacity: 1, y: 0 }}

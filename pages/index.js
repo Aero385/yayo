@@ -11,17 +11,12 @@ export default function Home() {
   return (
     <>
     <Header />
-    <div className="max-w-[1440] mx-auto flex justify-center flex-col items-center md:px-4 px-8">
-      <About />
-      <Prices />
-      <Example />
-      <Advantages />
-      <Form />
-      <Footer />
-    </div>
-      <Example />
-      <Footer />
-      <Advantages />
+    <About />
+    <Prices />
+    <Example />
+    <Form />
+    <Footer />
+    <Advantages />
     </>
   );
 }

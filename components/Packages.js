@@ -45,12 +45,12 @@ export default function Packages() {
   return (
     <div className="max-w-[1440px] w-full flex flex-col items-center mt-8">
       <div className="flex items-center justify-center gap-8">
-        <span>Monthly</span>
+        <pan>Monthly</pan>
         <Toggle isYearly={isYearly} onToggle={setIsYearly} />
         <span>Yearly</span>
       </div>
       {/* <div className="grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8"> */}
-      <div className="flex flex-wrap justify-center md:justify-between items-center w-full gap-8 mt-8">
+      <div className="flex flex-wrap justify-center md:justify-evenly items-center w-full gap-8 mt-8">
         {packages.map((pkg, index) => (
           <div
             key={index}

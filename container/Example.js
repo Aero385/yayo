@@ -68,37 +68,44 @@ export default function Example(){
     {
       name: "dec",
       color: "bg-dec",
-      side:"left",
+      side:"right",
       description: "MEESKONNAÜRITUS - maitseelamus",
     },
     
   ];
 
   return (
-    <div className="w-full bg-bgExp flex flex-col justify-center items-center">
-      {examples.map((card, index) => (
-        <div
-          className="relative" 
-          key={index}
-        >
-          <motion.div
-            key={index}
-            className={`${card.color} w-20 h-20 border rounded-full flex flex-col justify-center items-center`}
-          >
-            <div className="uppercase bg-ring flex justify-center items-center rounded-full text-white text-2xl">
-              {card.name}
-            </div>
-          </motion.div>
-          <div
-            className="absolute"
-          > {card.side && (
-            <motion.div>
-              {card.description}
-            </motion.div>
-          )}
-          </div>
+    <div className="w-full bg-bgExp flex flex-col justify-center gap-4 items-center">
+  {examples.map((card, index) => (
+    <div className="relative w-full" key={index}>
+      <motion.div
+        className={`${card.color} relative mx-auto w-16 h-16 rounded-full flex flex-col justify-center items-center`}
+      >
+        <div className="uppercase bg-ring flex justify-center items-center rounded-full text-black text-2xl">
+          {card.name}
         </div>
-      ))}
+        {card.side === "right" && (
+          <motion.span
+            className={`${card.color} absolute  w-8 h-3 top-1/2 left-[60px] transform -translate-y-1/2`}
+          >
+            <p className="text-white text-xs absolute top-1/2  left-[40px] transform -translate-y-1/2">
+              {card.description}
+            </p>
+          </motion.span>
+        )}
+        {card.side === "left" && (
+          <motion.span
+            className={`${card.color} absolute  w-8 h-3 top-1/2 left-[60px] transform -translate-y-1/2`}
+          >
+            <p className="text-white text-xs absolute top-1/2  left-[40px] transform -translate-y-1/2">
+              {card.description}
+            </p>
+          </motion.span>
+        )}
+      </motion.div>
     </div>
-  );
+  ))}
+</div>
+
+);
 }

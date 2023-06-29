@@ -6,7 +6,7 @@ const AboutUs = () => (
         <div className="font-light text-gray-700 sm:text-lg dark:text-gray-700">
             <h2 className="mb-4 text-4xl  tracking-tight font-extrabold text-gray-700 ">About us</h2>
             <p className="mb-4 text-lg font-normal">We are strategists, designers and developers. Innovators and problem solvers. Small enough to be simple and quick, but big enough to deliver the scope you want at the pace you need. Small enough to be simple and quick, but big enough to deliver the scope you want at the pace you need.</p>
-            <p className="mb-4 text-lg font-normal">testestestset, designers and developers. Innovators and problem solvers. Small enough to be simple and quick.</p>
+            <p className="mb-4 text-lg font-normal">Another one, designers and developers. Innovators and problem solvers. Small enough to be simple and quick.</p>
         </div>	
         <div className="grid grid-cols-2 gap-4 mt-8">
             <img className="w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png" alt="office content 1"/>

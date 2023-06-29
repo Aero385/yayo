@@ -1,6 +1,6 @@
 export default function Advantages(){
   return (
-    <section class="bg-white dark:bg-white">
+    <section class="bg-white dark:bg-white min-h-screen">
   <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
       <div class="max-w-screen-md mb-8 lg:mb-16">
           <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 ">Designed for business teams like yours</h2>
@@ -34,6 +34,13 @@ export default function Advantages(){
               </div>
               <h3 class="mb-2 text-xl font-bold ">Проверенные подрядчики</h3>
               <p class="text-gray-500 dark:text-gray-600">Audit-proof software built for critical financial operations like month-end close and quarterly budgeting.</p>
+          </div>
+          <div>
+              <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
+                  <svg class="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z"></path></svg>
+              </div>
+              <h3 class="mb-2 text-xl font-bold ">Опыт более 7 лет</h3>
+              <p class="text-gray-500 dark:text-gray-600">Craft beautiful, delightful experiences for both marketing and product with real cross-company collaboration.</p>
           </div>
           <div>
               <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">

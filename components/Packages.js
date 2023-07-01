@@ -3,6 +3,8 @@ import MyButton from "./MyButton";
 import Toggle from "@/components/Toggle";
 import { useState } from 'react';
 import { motion } from "framer-motion";
+import { TypingText } from "./Text";
+import { staggerContainer } from "@/constants/motion";
 
 
 
@@ -11,36 +13,37 @@ export default function Packages() {
 
   const [isYearly, setIsYearly] = useState(false);
 
-  const packages = [
-    {
-      imageSrc: "/lvl1.svg",
-      title: "Happy",
-      advantages: ['4 Season events', 'Tegevus juht', 'Event location', 'Snacks/Drinks'],
-      price: '29',
-      popular: false,
-    },
-    {
-      imageSrc: "/lvl2.svg",
-      title: "Happier",
-      advantages: ['4 Season events', 'Tegevus juht', 'Event location', 'Snacks/Drinks', 'Merchandise'],
-      price: '39',
-      popular: false,
-    },
-    {
-      imageSrc: "/lvl3.svg",
-      title: "Happiest",
-      advantages: ['4 Season events', 'Tegevus juht', 'Event location', 'Snacks/Drinks', 'Merchandise', 'Bus transfer', 'Public holidays gifts'],
-      price: '59',
-      popular: true,
-    },
-    {
-      imageSrc: "/lvl4.svg",
-      title: "Lux",
-      advantages: ['4 Season events', 'Tegevus juht', 'Event location', 'Snacks/Drinks', 'Merchandise', 'Bus transfer', 'Public holidays gifts', 'Individual BD presents'],
-      price: '129',
-      popular: false,
-    },
-  ];
+  
+ const packages = [
+  {
+    imageSrc: "/lvl1.svg",
+    title: "Happy",
+    advantages: ['4 Season events', 'Tegevus juht', 'Event location', 'Snacks/Drinks'],
+    price: '29',
+    popular: false,
+  },
+  {
+    imageSrc: "/lvl2.svg",
+    title: "Happier",
+    advantages: ['4 Season events', 'Tegevus juht', 'Event location', 'Snacks/Drinks', 'Merchandise'],
+    price: '39',
+    popular: false,
+  },
+  {
+    imageSrc: "/lvl3.svg",
+    title: "Happiest",
+    advantages: ['4 Season events', 'Tegevus juht', 'Event location', 'Snacks/Drinks', 'Merchandise', 'Bus transfer', 'Public holidays gifts'],
+    price: '59',
+    popular: true,
+  },
+  {
+    imageSrc: "/lvl4.svg",
+    title: "Lux",
+    advantages: ['4 Season events', 'Tegevus juht', 'Event location', 'Snacks/Drinks', 'Merchandise', 'Bus transfer', 'Public holidays gifts', 'Individual BD presents'],
+    price: '129',
+    popular: false,
+  },
+];
 
   return (
     <div className="max-w-[1440px] w-full flex flex-col items-center mt-8">
@@ -69,12 +72,12 @@ export default function Packages() {
               <h1 className="text-3xl font-semibold mt-4">{pkg.title}</h1>
               <ul className="mt-4 pt-4 border-t-2 border-red-300">
                 {pkg.advantages.map((advantage, i) => (
-                  <motion.li
+                  <motion.div 
+                  className="flex items-center space-x-4 mt-2 ml-8 text-md  text-base font-normal"
+                    variants={staggerContainer}
+                    initial="hidden"
+                    whileInView="show"
                     key={i}
-                    initial={{ opacity: 0, x: 100 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 1, delay: i * 0.1 }}
-                    className="flex items-center space-x-4 mt-2 ml-8 text-md  text-base font-normal"
                   >
                     <svg
                       className="w-4 h-4 fill-current text-custOrang"
@@ -83,8 +86,8 @@ export default function Packages() {
                     >
                       <path d="M20.293 4.293l-8.293 8.293-4.293-4.293-1.414 1.414 5 5 .707.707.707-.707 9-9z" />
                     </svg>
-                    <span>{advantage}</span>
-                  </motion.li>
+                    <TypingText title={advantage}/>
+                  </motion.div>
                 ))}
               </ul>
             </div>

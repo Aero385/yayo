@@ -1,3 +1,5 @@
+import { TitleText, TypingText } from "@/components/Text";
+import { fadeIn, rolling, staggerContainer } from "@/constants/motion";
 import { motion } from "framer-motion";
 
 export default function Example(){
@@ -7,7 +9,7 @@ export default function Example(){
       name: "jan",
       color: "bg-jan",
       side:"left",
-      description: "MEESKONNAÜRITUS - lõõgastav",
+      description: "ÜRITUS - lõõgastav",
     },
     {
       name: "feb",
@@ -23,7 +25,7 @@ export default function Example(){
       name: "apr",
       color: "bg-apr",
       side:"left",
-      description: "MEESKONNAÜRITUS - intellektuaalne",
+      description: "ÜRITUS - intellektuaalne",
     },
     {
       name: "may",
@@ -45,7 +47,7 @@ export default function Example(){
       name: "aug",
       color: "bg-aug",
       side:"right",
-      description: "MEESKONNAÜRITUS - loodusesliikumine",
+      description: "ÜRITUS - loodusesliikumine",
     },
     {
       name: "sep",
@@ -63,49 +65,125 @@ export default function Example(){
       name: "nov",
       color: "bg-nov",
       side:"left",
-      description: "MEESKONNAÜRITUS - maitseelamus",
+      description: "ÜRITUS - maitseelamus",
     },
     {
       name: "dec",
       color: "bg-dec",
       side:"right",
-      description: "MEESKONNAÜRITUS - maitseelamus",
+      description: "ÜRITUS - maitseelamus",
     },
-    
   ];
 
-  return (
-    <div className="w-full bg-bgExp flex flex-col justify-center gap-4 items-center">
-  {examples.map((card, index) => (
-    <div className="relative w-full" key={index}>
-      <motion.div
-        className={`${card.color} relative mx-auto w-16 h-16 rounded-full flex flex-col justify-center items-center`}
-      >
-        <div className="uppercase bg-ring flex justify-center items-center rounded-full text-black text-2xl">
-          {card.name}
-        </div>
-        {card.side === "right" && (
-          <motion.span
-            className={`${card.color} absolute  w-8 h-3 top-1/2 left-[60px] transform -translate-y-1/2`}
-          >
-            <p className="text-white text-xs absolute top-1/2  left-[40px] transform -translate-y-1/2">
-              {card.description}
-            </p>
-          </motion.span>
-        )}
-        {card.side === "left" && (
-          <motion.span
-            className={`${card.color} absolute  w-8 h-3 top-1/2 left-[60px] transform -translate-y-1/2`}
-          >
-            <p className="text-white text-xs absolute top-1/2  left-[40px] transform -translate-y-1/2">
-              {card.description}
-            </p>
-          </motion.span>
-        )}
-      </motion.div>
-    </div>
-  ))}
-</div>
+  const halfwayIndex = Math.ceil(examples.length / 2);
+  const firstHalf = examples.slice(0, halfwayIndex);
+  const secondHalf = examples.slice(halfwayIndex);
 
-);
-}
+    return (
+      <>
+
+        {/* MOBILE */}
+
+        <div className="md:hidden w-full rounded-3xl bg-bgExp flex flex-col justify-center gap-4 px-2 py-8 items-center">
+          <TitleText 
+            textStyles='text-center text-white uppercase'
+            title='Example of Annual Team Events Programm'
+          />
+          {examples.map((card, index) => (
+            <motion.div 
+              className="relative w-ful max-w-6xl mx-auto px-2" 
+              key={index}
+              variants={staggerContainer}
+              initial='hidden'
+              whileInView='show'
+              viewport={{once: 'false', amount: 0.25}}
+            >
+              <motion.div
+                className={`${card.color}  relative mx-auto w-16 h-16 rounded-full flex flex-col justify-center items-center`}
+                variants={rolling(card.side)}
+              >
+                <div className="uppercase bg-ring flex justify-center items-center rounded-full text-black text-2xl">
+                  {card.name}
+                </div>
+              </motion.div>
+              {card.side === "right" && (
+                <motion.span
+                  className={`${card.color} absolute  w-8 h-2 top-7 left-[70px] transform -translate-y-1/2`}
+                  variants={fadeIn('left', 'tween', 1, 2)}
+                >
+                  <p className="text-white text-xs absolute top-1/2  left-[40px] transform -translate-y-1/2">
+                    {card.description}
+                  </p>
+                </motion.span>
+              )}
+              {card.side === "left" && (
+                <motion.span
+                  className={`${card.color} absolute w-8 h-2 top-7 right-[70px] transform -translate-y-1/2`}
+                  variants={fadeIn('right', 'tween', 0.5, 3)}
+                >
+                  <p className="text-white text-xs absolute top-1/2  right-[40px] transform -translate-y-1/2">
+                    {card.description}
+                  </p>
+                </motion.span>
+              )}
+            </motion.div>
+          ))}
+        </div>
+
+        {/* DESKTOP */}
+
+        <div className="mt-[100px] relative hidden md:flex md:flex-col justify-center min-h-screen " >
+          <TitleText 
+              textStyles='leading-none text-center text-[64px] text-bgExp uppercase'
+              title='Example of Annual Team Events Programm'
+            />
+          <div className="mx-auto h-[800px] grid grid-row-2 justify-center my-auto px-[80px] py-6 rounded-3xl max-w-6xl bg-bgExp">
+            <div className="flex items-center justify-center gap-[70px]">
+              {firstHalf.map((card, index) => (
+                <motion.div 
+                  className="relative" 
+                  key={index}
+                  variants={staggerContainer()}
+                  initial='hidden'
+                  whileInView='show'
+                  viewport={{once: 'false', amount: 0.25}}
+                >
+                  <motion.div
+                    className={`${card.color} relative w-20 h-20 rounded-full flex justify-center items-center`}
+                    variants={rolling('left', index * 0.2 )}
+                  >
+                    <div className="uppercase bg-ring flex justify-center items-center rounded-full text-black text-2xl">
+                      {card.name}
+                    </div>
+                  </motion.div>
+                </motion.div>
+              ))}
+            </div>
+            <div className="flex items-center justify-center gap-[70px]">
+              {secondHalf.map((card, index) => (
+                <motion.div 
+                  className="relative" 
+                  key={index}
+                  variants={staggerContainer()}
+                  initial='hidden'
+                  whileInView='show'
+                  viewport={{once: 'false', amount: 0.25}}
+                >
+                  <motion.div
+                    className={`${card.color} relative w-20 h-20 rounded-full flex justify-center items-center`}
+                    variants={rolling('right', index * 0.2 )}
+                  >
+                    <div className="uppercase bg-ring flex justify-center items-center rounded-full text-black text-2xl">
+                      {card.name}
+                    </div>
+                  </motion.div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </>
+  
+  );
+  }
+

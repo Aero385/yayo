@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <>
       <Nav />
-      <div className="max-w-[1440px] w-full h-full flex flex-col md:gap-0 gap-8 mx-auto md:flex-row md:justify-center md:px-4 px-8 py-4">
+      <div className="max-w-[1440px] w-full flex flex-col md:gap-0 gap-8 mx-auto md:flex-row md:justify-center md:px-4 px-8 py-4">
         <div className="flex items-center justify-center order-1 ">
           <Image src="/main.png" width={1000} height={1000} alt="main" />
         </div>

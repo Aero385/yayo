@@ -36,6 +36,37 @@ export default function Cards() {
       description: "Testing your team for happiness",
     },
   ];
+  
+  const packages = [
+    {
+      imageSrc: "/lvl1.svg",
+      title: "Happy",
+      advantages: ['4 Season events', 'Tegevus juht', 'Event location', 'Snacks/Drinks'],
+      price: '29',
+      popular: false,
+    },
+    {
+      imageSrc: "/lvl2.svg",
+      title: "Happier",
+      advantages: ['4 Season events', 'Tegevus juht', 'Event location', 'Snacks/Drinks', 'Merchandise'],
+      price: '39',
+      popular: false,
+    },
+    {
+      imageSrc: "/lvl3.svg",
+      title: "Happiest",
+      advantages: ['4 Season events', 'Tegevus juht', 'Event location', 'Snacks/Drinks', 'Merchandise', 'Bus transfer', 'Public holidays gifts'],
+      price: '59',
+      popular: true,
+    },
+    {
+      imageSrc: "/lvl4.svg",
+      title: "Lux",
+      advantages: ['4 Season events', 'Tegevus juht', 'Event location', 'Snacks/Drinks', 'Merchandise', 'Bus transfer', 'Public holidays gifts', 'Individual BD presents'],
+      price: '129',
+      popular: false,
+    },
+  ];
 
   return (
     <div className="w-full flex flex-wrap md:flex-row gap-8 justify-center items-center px-5 pt-7 text-center">

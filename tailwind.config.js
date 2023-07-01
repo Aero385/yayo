@@ -35,7 +35,8 @@ module.exports = {
         nov:"#62E557",
         dec:"#CBED45",
       },
-    
+     
+
     },
   },
   plugins: [],

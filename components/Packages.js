@@ -52,7 +52,6 @@ export default function Packages() {
         <Toggle isYearly={isYearly} onToggle={setIsYearly} />
         <span>Yearly</span>
       </div>
-      {/* <div className="grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8"> */}
       <div className="flex flex-wrap justify-center md:justify-evenly items-center w-full gap-8 mt-8">
         {packages.map((pkg, index) => (
           <div

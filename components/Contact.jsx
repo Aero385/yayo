@@ -1,5 +1,3 @@
-import React, { useRef, useState } from "react";
-import { motion } from "framer-motion";
 
 const Contact = () => (
 	<div className="relative flex items-top justify-center min-h-screen bg-white white:bg-white sm:items-center sm:pt-0 ">

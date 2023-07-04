@@ -4,7 +4,7 @@ import Example from "@/container/Example";
 import Footer from "@/container/Footer";
 import Header from "@/container/Header";
 import Prices from "@/container/Prices";
-import Form from "@/components/Form";
+import Form from "@/container/Form";
 import AboutUs from "@/components/AboutUs";
 
 
@@ -16,9 +16,9 @@ export default function Home() {
     <Prices />
     <Example />
     <AboutUs/>
-    <Form />
     <Advantages />
-    <Footer />
+    <Form />
+    <Footer/>
     </>
   );
 }

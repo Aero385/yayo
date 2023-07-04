@@ -8,6 +8,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'forest': "url('/public/lake.png')",
+      },
       screens: {
         xs: '480px',
       },

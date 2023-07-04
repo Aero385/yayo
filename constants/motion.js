@@ -49,7 +49,7 @@ export const textContainer = {
   },
   show: (i = 1) => ({
     opacity: 1,
-    transition: { staggerChildren: 0.1, delayChildren: i * 0.1 },
+    transition: { staggerChildren: 0.05, delayChildren: i * 0.05 },
   }),
 };
 
@@ -70,8 +70,8 @@ export const textVariant2 = {
 
 export const fadeIn = (direction, type, delay, duration) => ({
   hidden: {
-    x: direction === 'left' ? '200%' : '-200%',
-    y: direction === 'up' ? 100 : direction === 'down' ? -100 : 0,
+    x: direction === 'left' ? '200%' : direction === 'right' ?  '-200%' : 0,
+    y: direction === 'up' ?  '200%' : direction === 'down' ?  '-200%' : 0,
     opacity: 0,
   },
   show: {

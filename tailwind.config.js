@@ -39,5 +39,10 @@ module.exports = {
 
     },
   },
+  // variants: {
+  //   extend: {
+  //     linearGradients: ['responsive'],
+  //   },
+  // },
   plugins: [],
 }

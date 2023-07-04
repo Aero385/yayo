@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 
 export default function Cards() {
   const className = "";
+
+  const [hoveredCard, setHoveredCard] = useState(null);
 
   const cards = [
     {
@@ -70,50 +73,62 @@ export default function Cards() {
 
   return (
     <div className="w-full flex flex-wrap md:flex-row gap-8 justify-center items-center px-5 pt-7 text-center">
-    {cards.map((card, index) => (
-      <motion.div
-        key={index}
-        initial={{ opacity: 0, y: 300 }}
-        animate={{ opacity: 1, y: 0 }}
-        whileHover={{
-          scale: 1.1,
-          transition: { duration: 0.3 },
-          boxShadow: `0px 0px 10px `,
-        }}
-        transition={{ duration: 1, delay: index * 0.2 }}
-        className={`${card.color} border rounded-xl flex flex-col px-4 gap-4 ${className}`}
-        style={{ width: "245px", height: "350px" }}
-      >
-        <div className="flex mt-auto justify-center">
-          <motion.img
-            src={card.imageSrc}
-            width={80}
-            height={80}
-            alt="img"
-            className="md:w-30 md:h-30 w-30 h-30"
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-          />
-        </div>
-        <motion.h1
-          className="text-3xl font-semibold"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
+      {cards.map((card, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 300 }}
+          animate={{ opacity: 1, y: 0 }}
+          whileHover={{
+            scale: 1.1,
+            transition: { duration: 0.2 },
+            zIndex: 1,
+          }}
+          transition={{ duration: 0.5, delay: index * 0.2 }}
+          className={`${card.color} border rounded-xl flex flex-col px-4 gap-4 ${className}`}
+          style={{ width: "245px", height: "350px" }}
+          onHoverStart={() => setHoveredCard(index)}
+          onHoverEnd={() => setHoveredCard(null)}
         >
-          {card.title}
-        </motion.h1>
-        <motion.p
-          className="text-xl mb-auto"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-        >
-          {card.description}
-        </motion.p>
-      </motion.div>
-    ))}
-  </div>
-);
+          <motion.div
+            className="flex items-center flex-col h-full gap-4"
+            animate={{
+              filter:
+                hoveredCard !== null && hoveredCard !== index ? "blur(3px)" : "none",
+            }}
+            transition={{ filter: { duration: 0.5 } }}
+          >
+            <div>
+              <motion.img
+                src={card.imageSrc}
+                width={80}
+                height={80}
+                alt="img"
+                className="md:w-30 md:h-30 mt-12"
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+              />
+            </div>
+            <motion.h1
+              className="text-3xl font-semibold"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              {card.title}
+            </motion.h1>
+            <motion.p
+              className="text-xl"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+            >
+              {card.description}
+            </motion.p>
+          </motion.div>
+        </motion.div>
+      ))}
+    </div>
+
+  );
 }

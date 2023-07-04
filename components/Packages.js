@@ -92,7 +92,7 @@ export default function Packages() {
               </ul>
             </div>
             <div className="mt-6">
-              <MyButton text={`${isYearly ? pkg.price * 12 : pkg.price} € / per Person`} className="w-full" />
+              <MyButton text={`${isYearly ? pkg.price * 12 : pkg.price} € / per Person`} className={`${isYearly ? pkg.price * 12 : pkg.price}`}/>
             </div>
           </div>
         ))}

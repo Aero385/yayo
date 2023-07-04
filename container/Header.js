@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Header() {
   return (
-    <>
+    <div className="min-h-screen">
       <Nav />
       <div className="max-w-[1440px] w-full flex flex-col md:gap-0 gap-8 mx-auto md:flex-row md:justify-center md:px-4 px-8 py-4">
         <div className="flex items-center justify-center order-1 ">
@@ -23,6 +23,6 @@ export default function Header() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

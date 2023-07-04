@@ -7,8 +7,8 @@ export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="w-full shadow top-0 flex justify-center z-[10] py-4">
-      <div className="md:max-w-[1440px] w-full flex justify-between items-center  px-4">
+    <div className=" shadow top-0 flex justify-center z-[10] py-4">
+      <div className="md:max-w-[1440px] w-full flex justify-between items-center px-4">
         <div className="flex w-full justify-between">
           <Logo />
           <button

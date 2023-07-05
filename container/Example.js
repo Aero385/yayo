@@ -91,7 +91,7 @@ export default function Example(){
           />
           {examples.map((card, index) => (
             <motion.div 
-              className="relative w-ful max-w-6xl mx-auto px-2" 
+              className="relative w-full max-w-6xl mx-auto px-2" 
               key={index}
               variants={staggerContainer}
               initial='hidden'

@@ -70,7 +70,7 @@ export const textVariant2 = {
 
 export const fadeIn = (direction, type, delay, duration) => ({
   hidden: {
-    x: direction === 'left' ? '200%' : direction === 'right' ?  '-200%' : 0,
+    x: direction === 'left' ? '50%' : direction === 'right' ?  '-50%' : 0,
     y: direction === 'up' ?  '200%' : direction === 'down' ?  '-200%' : 0,
     opacity: 0,
   },

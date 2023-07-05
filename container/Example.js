@@ -120,7 +120,7 @@ export default function Example(){
               {card.side === "left" && (
                 <motion.span
                   className={`${card.color} absolute w-8 h-2 top-7 right-[218px] transform -translate-y-1/2`}
-                  variants={fadeIn('right', 'tween', 0.5, 3)}
+                  variants={fadeIn('right', 'tween', 0.8, 3)}
                 >
                   <p className="text-white text-xs absolute top-1/2  right-[40px] transform -translate-y-1/2">
                     {card.description}

@@ -1,12 +1,11 @@
 import React from 'react';
-import { FiPhoneCall } from 'react-icons/Fi';
-import { AiOutlineMail } from 'react-icons/Ai';
-import { CgFacebook } from 'react-icons/Cg';
-import { FaViber } from 'react-icons/Fa';
-import { AiOutlineWhatsApp } from 'react-icons/Ai';
-import { BiMap } from 'react-icons/Bi';
+import { FiPhoneCall } from 'react-icons/fi';
+import { AiOutlineMail } from 'react-icons/ai';
+import { CgFacebook } from 'react-icons/cg';
+import { FaViber } from 'react-icons/fa';
+import { AiOutlineWhatsApp } from 'react-icons/ai';
+import { BiMap } from 'react-icons/bi';
 import Logo from '@/components/Logo';
-
 
 export default function Footer() {
   return (

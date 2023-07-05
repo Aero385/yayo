@@ -13,7 +13,7 @@ export default function Home() {
     <>
     <Header />
     <About />
-    <Prices />
+    <Prices/>
     <Example />
     <AboutUs/>
     <Advantages />

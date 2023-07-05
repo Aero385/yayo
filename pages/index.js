@@ -6,6 +6,7 @@ import Header from "@/container/Header";
 import Prices from "@/container/Prices";
 import Form from "@/container/Form";
 import AboutUs from "@/components/AboutUs";
+import Carousel from "@/container/Carousel";
 
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
     <>
     <Header />
     <About />
+    <Carousel/>
     <Prices/>
     <Example />
     <AboutUs/>

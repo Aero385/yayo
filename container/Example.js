@@ -109,7 +109,7 @@ export default function Example(){
               </motion.div>
               {card.side === "right" && (
                 <motion.span
-                  className={`${card.color} absolute  w-8 h-2 top-7 left-[70px] transform -translate-y-1/2`}
+                  className={`${card.color} absolute  w-8 h-2 top-7 left-[218px] transform -translate-y-1/2`}
                   variants={fadeIn('left', 'tween', 1, 2)}
                 >
                   <p className="text-white text-xs absolute top-1/2  left-[40px] transform -translate-y-1/2">
@@ -119,7 +119,7 @@ export default function Example(){
               )}
               {card.side === "left" && (
                 <motion.span
-                  className={`${card.color} absolute w-8 h-2 top-7 right-[70px] transform -translate-y-1/2`}
+                  className={`${card.color} absolute w-8 h-2 top-7 right-[218px] transform -translate-y-1/2`}
                   variants={fadeIn('right', 'tween', 0.5, 3)}
                 >
                   <p className="text-white text-xs absolute top-1/2  right-[40px] transform -translate-y-1/2">

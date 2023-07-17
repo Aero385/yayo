@@ -14,8 +14,8 @@ export default function Home() {
     <>
     <Header />
     <About />
-    <Carousel/>
     <Prices/>
+    <Carousel/>
     <Example />
     <AboutUs/>
     <Advantages />

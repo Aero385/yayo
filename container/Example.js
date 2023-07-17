@@ -132,7 +132,7 @@ export default function Example(){
         </div>
 
         {/* DESKTOP */}
-        <div className="flex justify-center md:flex items-center hidden min-h-screen px-4">
+        <div className="flex justify-center md:flex items-center mt-32 hidden min-h-screen px-4">
           <div className="max-w-6xl relative md:flex md:flex-col justify-center" >
             <TitleText 
               textStyles='leading-none text-center text-[64px] text-bgExp uppercase'

@@ -56,11 +56,11 @@ export default function Packages() {
         {packages.map((pkg, index) => (
           <div
             key={index}
-            className="flex border overflow-hidden border-red-300 flex-col justify-between bg-white rounded-xl shadow-lg p-6 relative"
+            className="flex border overflow-hidden border-test3 flex-col justify-between bg-white rounded-xl shadow-lg p-6 relative"
             style={{ width: "300px", height: "520px" }}
           >
             {pkg.popular && (
-              <span className="absolute w-full md:top-[20px] md:right-[-110px] right-[-110px] transform rotate-45 bg-red-500 text-white py-1 px-3 text-md font-bold">
+              <span className="absolute w-full md:top-[20px] md:right-[-110px] right-[-110px] transform rotate-45 bg-test2 text-test1 py-1 px-3 text-md font-bold">
                 Popular
               </span>
             )}
@@ -69,17 +69,17 @@ export default function Packages() {
                 <Image src={pkg.imageSrc} alt="Package" width="70" height="70" />
               </div>
               <h1 className="text-3xl font-semibold mt-4">{pkg.title}</h1>
-              <ul className="mt-4 pt-4 border-t-2 border-red-300">
+              <ul className="mt-4 pt-4 border-t-2 border-test3">
                 {pkg.advantages.map((advantage, i) => (
                   <motion.div 
-                  className="flex items-center space-x-4 mt-2 ml-8 text-md  text-base font-normal"
+                    className="flex items-center space-x-4 mt-2 ml-8 text-md  text-base font-normal"
                     variants={staggerContainer}
                     initial="hidden"
                     whileInView="show"
                     key={i}
                   >
                     <svg
-                      className="w-4 h-4 fill-current text-custOrang"
+                      className="w-4 h-4 fill-current text-test1"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                     >
@@ -91,7 +91,10 @@ export default function Packages() {
               </ul>
             </div>
             <div className="mt-6">
-              <MyButton text={`${isYearly ? pkg.price * 12 : pkg.price} € / per Person`} className={`${isYearly ? pkg.price * 12 : pkg.price}`}/>
+              <MyButton 
+                text={`${isYearly ? pkg.price * 12 : pkg.price} € / per Person`} 
+                className={`${isYearly ? pkg.price * 12 : pkg.price} bg-test2 w-full items-center justify-center text-test1 hover:text-basic hover:bg-test3`}
+              />
             </div>
           </div>
         ))}

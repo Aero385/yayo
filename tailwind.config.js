@@ -18,7 +18,12 @@ module.exports = {
         manrop: ['Manrop', 'sans-serif'],
       },
       colors: {
+        test1: '#FAD02C',
+        test2: '#333652',
+        test3: '#90ADC6',
         primary: '#00EBC7',
+        secondary: '#f76ce9',
+        basic: '#2e71f7',
         custRose: '#FF5470',
         custYel: '#FDE24F',
         custPurp: 'rgba(153, 79, 243, 0.46)',

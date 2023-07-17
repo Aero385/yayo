@@ -7,34 +7,34 @@ const MAX_VISIBILITY = 3;
 
 const images = [
   {
-    src: '/act5.jpg',
+    src: '/act2.jpg',
     alt: 'Image 1',
-        width: 800,
-    height: 600,
+        width: 500,
+    height: 300,
   },
   {
     src: '/act2.jpg',
     alt: 'Image 2',
-        width: 800,
-    height: 600,
+        width: 500,
+    height: 300,
   },
   {
     src: '/act3.jpg',
     alt: 'Image 2',
-        width: 800,
-    height: 600,
+        width: 500,
+    height: 300,
   },
   {
     src: '/act4.jpg',
     alt: 'Image 2',
-        width: 800,
-    height: 600,
+        width: 500,
+    height: 300,
   },
   {
     src: '/act1.jpg',
     alt: 'Image 2',
-        width: 800,
-    height: 600,
+        width: 500,
+    height: 300,
   },
 ];
 
@@ -82,17 +82,25 @@ function Slider({children}){
 
 export default function Carousel(){
   return (
-    <div className="carousel__wrapper">
-      <Slider>
-        {[...new Array(CARDS)].map((_, i) => (
-          <Card
-            key={i}
-            title={'Test Test Card ' + (i + 1)}
-            content='test card'
-            image={images[i % images.length]} // Use modulo operator to cycle through images
-          />
-        ))}
-      </Slider>
-  </div>
+    <div className='flex flex-col justify-center items-center gap-10'>
+      <h1 className='text-4xl px-8 text-center'>
+        Aastane ürituseplaan - vali sobilik pakett
+      </h1>
+      <p className='md:text-lg max-w-[60%] font-normal px-8 text-md'>
+        Strateegiapäevad, firmapeod, Halloween, sügismatkad, kevadised motivatsioonipäevad - Sinu tiim, teie üritus, meie korraldus! Leia oma ettevõttele kõige sobilikum lahendus
+      </p>
+      <div className="carousel__wrapper">
+        <Slider>
+          {[...new Array(CARDS)].map((_, i) => (
+            <Card
+              key={i}
+              title={'Test Test Card ' + (i + 1)}
+              content='test card'
+              image={images[i % images.length]} // Use modulo operator to cycle through images
+            />
+          ))}
+        </Slider>
+      </div>
+    </div>
   )
 }

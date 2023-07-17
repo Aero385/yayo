@@ -7,8 +7,8 @@ export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className=" shadow top-0 flex justify-center z-[10] py-4">
-      <div className="md:max-w-[1440px] w-full flex justify-between items-center px-4">
+    <div className=" shadow top-0 flex justify-center z-[10] py-8">
+      <div className="md:max-w-[1440px] w-full flex justify-between items-center px-8">
         <div className="flex w-full justify-between">
           <Logo />
           <button
@@ -34,11 +34,12 @@ export default function Nav() {
             </svg>
           </button>
           <div className="flex md:flex-row flex-col gap-10">
-            <Link className="hover:text-gray-500" href="/">For companies</Link>
-            <Link className="hover:text-gray-500" href="/">Resources</Link>
-            <Link className="hover:text-gray-500" href="/">About us</Link>
+            <Link className="hover:text-gray-500" href="/">Ettevõttele</Link>
+            <Link className="hover:text-gray-500" href="/">Eraiskule</Link>
+            <Link className="hover:text-gray-500" href="/">Meist</Link>
           </div>
-          <MyButton text={"Get started"} />
+          <MyButton text={"Loo aastaplaan"} className={'bg-test1 text-black hover:text-test1 hover:bg-white'}/>
+          <MyButton text={'Kontakt'} className={'bg-basic text-white hover:text-basic hover:bg-white'}/>
         </div>
       </div>
     </div>

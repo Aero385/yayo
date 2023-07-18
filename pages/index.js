@@ -17,9 +17,9 @@ export default function Home() {
     <Prices/>
     <Carousel/>
     <Example />
-    <AboutUs/>
     <Advantages />
     <Form />
+    <AboutUs/>
     <Footer/>
     </>
   );

@@ -54,8 +54,8 @@ export default function Footer() {
                     </ul>
                 </div>
             </div>
-            <hr class="my-6 border-gray-200 sm:mx-auto text-primary lg:my-8" />
-            <span class="flex text-sm text-gray-500 sm:text-center dark:text-gray-400">
+            <hr class="my-6 border-gray-200 text-primary lg:my-8" />
+            <span class="flex justify-center mx-auto text-sm text-gray-500 text-center dark:text-gray-400">
                 © 2023 
                 <a href="" class="hover:underline">Eventeamly™</a>
                 . All Rights Reserved.
